@@ -1,0 +1,33 @@
+<div class="profile">
+    <div class="col-xs-2">
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-success"><a href="#/principal/usuario/producto">Agregar producto</a></li>
+            <li class="list-group-item list-group-item-success"><a href="">Notificaciones</a><span class="badge">1</span></li>
+            </li>
+            <li class="list-group-item list-group-item-success"><a href="#/principal/usuario/editar/{{userId}}">Editar información personal</a></li>
+            <li class="list-group-item list-group-item-success"><a href="#/">Página principal</a></li>
+        </ul>
+    </div>
+    <div class="col-xs-10">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="p in products">
+                    <td>{{p.product_name}}</td>
+                    <td>{{p.description}}</td>
+                    <td>{{p.status}}</td>
+                    <td>
+                    <a href="#/principal/usuario/producto/editar/{{p.id}}"><button class="btn btn-success">Editar</button></a>
+                    <button class="btn btn-danger" ng-click="deleteProduct({{p.id}})">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

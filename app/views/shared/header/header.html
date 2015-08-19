@@ -1,0 +1,31 @@
+<div ng-controller="HeaderController" class="navbar navbar-header navbar-static-top container-header" role="navigation">
+    <div class="header-info" ng-show="showHeader">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <a href="#/"><img class="logo-header" src="/assets/img/logo.png"></a>
+                        </div>
+                        <div class="col-xs-6 header-functions">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <a href="#/principal/usuario"><p style="color:#60913C;">{{user.email}}</p></a>
+                                </div>
+                                <div class="col-xs-3 logout" ng-show="user">
+                                    <a style="color:#60913C;" href="" ng-click="signOut()">Salir</a>
+                                </div>
+                                <div class="col-xs-3 logout" ng-show="!user">
+                                    <a style="color:#60913C;" href="#/ingresar" ng-click="signOut()">Ingresar</a>
+                                </div>
+                                <div class="col-xs-3 logout" ng-show="!user">
+                                    <a style="color:#60913C;" href="#/registrar">Registrar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
