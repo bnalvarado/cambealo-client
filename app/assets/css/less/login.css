@@ -1,0 +1,36 @@
+.home-login {
+    background: #323232;
+    padding-top: 100px;
+}
+
+.logo {
+    text-align: center;
+    margin: 10px 0 20px 0;
+}
+
+img {
+    width: 453px!important;
+    height: 77px;
+}
+
+button.btn.login {
+	background-color: #548A3A;
+	border-color: #9CB557;
+    .gradient-btn;
+    width: 100%;
+    height: 46px;
+}
+
+.error {
+    background-color: #FBC9C2;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    span {
+        padding: 5px 0px;
+        display: inline-block;
+    }
+    .glyphicon-remove {
+        color: #E1504F;
+    }
+}

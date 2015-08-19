@@ -1,0 +1,66 @@
+<div class="container products-crud-screen">
+    <div class="col-xs-6">
+        <div class="form-wrap">
+            <form class="" name="form">
+                <div class="form-group">
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <label for="name">Nombre de Producto</label>
+                        <input id="name" ng-model="product.name" class="form-control input-lg" required name="name" type="text" placeholder="Nombre de Product" ng-trim="false" ng-change="name = name.split(' ').join('')" ng-pattern="/^[a-zäáàëéèíìöóòúùñç0-9A-Z\s]+$/" data-ng-minlength="2" ng-maxlength="50" tabindex="1">
+                        <!--First name errors-->
+                        <div class="alert alert-danger" ng-show="form.name.$error.minlength">El nombre ingresado es muy corto, se necesitan almenos 2 caracteres</div>
+                        <div class="alert alert-danger" ng-show="form.name.$error.maxlength">El nombre ingresado es muy largo, se necesitan menos de 50 caracteres</div>
+                        <div class="alert alert-danger" ng-show="form.name.$error.pattern">No se pueden usar caracteres especiales</div>
+                        <!--End first name errors-->
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <label for="description">Descripción</label>
+                        <textarea id="description" type="textarea" rows="4" ng-model="product.description" class="form-control" name="description" placeholder="Descripción" data-ng-minlength="10" ng-maxlength="100" tabindex="2"></textarea>
+                        <!--Description errors-->
+                        <div class="alert alert-danger" ng-show="form.description.$error.minlength">La descripción ingresada es muy corta, se necesitan almenos 10 caracteres</div>
+                        <div class="alert alert-danger" ng-show="form.description.$error.maxlength">La descripción ingresada es muy larga, se necesitan menos de 100 caracteres</div>
+                        <!--End password errors-->
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <label for="picture">Estado</label>
+                        <input id="picture" type="file" class="file">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <label for="state">Estado</label>
+                        <select class="form-control" id="state" ng-model="product.status">
+                            <option>activo</option selected="selected">
+                            <option>inactivo</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="form-group">
+                        <button id="create-user" ng-disabled="form.$invalid" class="btn btn-primary login" ng-show="showCreate" ng-click="createProduct()">Crear</button>
+                    </div>
+                    <div class="form-group">
+                        <button id="update-user" ng-disabled="form.$invalid" class="btn btn-primary login" ng-show="showUpdate" ng-click="updateProduct()">Actualizar</button>
+                    </div>
+                    <div class="form-group">
+                        <a href="#/principal/usuario">
+                            <button id="cancel-user" class="btn btn-primary login">Cancelar</button>
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-xs-6">
+        <img id="imgProduct" class="img-product" src="">
+    </div>
+</div>
