@@ -20,6 +20,7 @@ angular.module('proyecto2App')
 
 			$scope.showCreate = true;
 			$scope.showUpdate = false;
+
 			var userId = session.getCurrentUser().id;
 			var productId = '';
 
@@ -120,10 +121,6 @@ angular.module('proyecto2App')
 				}
 				today += currentMonth + currentDay;
 				return today;
-			}
-
-			function setImage() {
-
 			}
 
 			function readImage(input) {

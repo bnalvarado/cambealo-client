@@ -29,6 +29,7 @@
                 userId: api + 'users/:id',
                 userProducts: api + 'users/:user_id/products',
                 userProductId: api + 'users/:user_id/products/:id',
+                productName: api + 'products/search/:name'
             },
             defaultRange: 5
         });

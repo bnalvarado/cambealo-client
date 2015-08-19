@@ -1,4 +1,12 @@
 <div class="principal">
+    <br>
+    <div class="col-xs-3" style="margin-left:50%">
+        <input id="search" ng-model="productSearch" class="form-control" required name="name" type="text" placeholder="Nombre de Producto a buscar" tabindex="1">
+    </div>
+    <button class="btn btn-default" type="submit" ng-click="searchProduct()">Buscar</button>
+    <div ng-repeat="p in products">
+        <img src="{{p.picture}}">
+    </div>
     <div ng-repeat="p in products">
         <img class="principal-image" src="{{p.picture}}" alt="">
     </div>
