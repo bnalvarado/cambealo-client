@@ -14,6 +14,25 @@ angular.module('proyecto2App')
                         }
                     });
                 },
+                allProducts: function() {
+                    return $resource(config.apiUrls.products, {
+                    }, {
+                        'get': {
+                            method: 'GET',
+                            isArray: false
+                        }
+                    });
+                },
+                userProducts: function() {
+                    return $resource(config.apiUrls.userProducts, {
+                        user_id: '@user_id'
+                    }, {
+                        'get': {
+                            method: 'GET',
+                            isArray: false
+                        }
+                    });
+                },
                 create: function() {
                     return $resource(config.apiUrls.userProducts, {
                         user_id: '@user_id'

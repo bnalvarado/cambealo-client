@@ -27,6 +27,7 @@
                 session: api + 'sessions',
                 user: api + 'users',
                 userId: api + 'users/:id',
+                products: api + 'products',
                 userProducts: api + 'users/:user_id/products',
                 userProductId: api + 'users/:user_id/products/:id',
                 productName: api + 'products/search/:name'

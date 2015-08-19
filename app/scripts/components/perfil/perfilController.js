@@ -24,9 +24,13 @@ angular.module('proyecto2App')
 
 			getProducts();
 
-			$scope.deleteProduct = function(productId){
+			$scope.deleteProduct = function(productId) {
+				var ids = {
+					user_id: $scope.userId,
+					id: productId
+				}
 				var resource = productsResource.delete();
-				resource.delete({id:productId},function(data) {
+				resource.delete(ids, function(data) {
 					if (data === null) {
 						return;
 					}
@@ -39,10 +43,10 @@ angular.module('proyecto2App')
 				});
 			}
 
-			function removeProduct(id){
+			function removeProduct(id) {
 				var products = $scope.products;
 				$scope.products = [];
-				products.map(function(product){
+				products.map(function(product) {
 					if (product.id === id) {
 						return;
 					}
@@ -50,9 +54,11 @@ angular.module('proyecto2App')
 				});
 			}
 
-			function getProducts(){
+			function getProducts() {
 				var resource = productsResource.index();
-				resource.get({user_id:$scope.userId},function(data) {
+				resource.get({
+					user_id: $scope.userId
+				}, function(data) {
 					if (data === null) {
 						return;
 					}
