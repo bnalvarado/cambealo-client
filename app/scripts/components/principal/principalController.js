@@ -21,7 +21,7 @@ angular.module('proyecto2App')
 		 * Get user
 		 */
 		var user = session.getCurrentUser();
-
+		$scope.productSearch = '';
 		getProducts();
 
 		function getProducts() {
@@ -35,5 +35,17 @@ angular.module('proyecto2App')
 				alert('Fallo');
 			});
 		}
+
+		$scope.searchProduct = function(){
+			var resource = productsResource.search();
+			resource.get({name:$scope.productSearch},function(data){
+				if (data === null) {
+					return;
+				}
+				$scope.products = data.product;
+			}, function(err) {
+				alert('Fallo');
+			});
+		};
 	}
 ]);

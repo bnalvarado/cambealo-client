@@ -49,6 +49,16 @@ angular.module('proyecto2App')
                             isArray: false
                         }
                     });
+                },
+                search: function(){
+                  return $resource(config.apiUrls.productName, {
+                        name: '@name'
+                    }, {
+                        'get': {
+                            method: 'GET',
+                            isArray: false
+                        }
+                    });  
                 }
             };
         }
