@@ -5,9 +5,6 @@
     </div>
     <button class="btn btn-default" type="submit" ng-click="searchProduct()">Buscar</button>
     <div ng-repeat="p in products">
-        <img src="{{p.picture}}">
-    </div>
-    <div ng-repeat="p in products">
-        <img class="principal-image" src="{{p.picture}}" alt="">
+        <a href="#/principal/transaction/{{p.id}}"><img class="principal-image" src="{{p.picture}}" alt=""></a>
     </div>
 </div>

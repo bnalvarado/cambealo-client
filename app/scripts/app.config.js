@@ -30,7 +30,8 @@
                 products: api + 'products',
                 userProducts: api + 'users/:user_id/products',
                 userProductId: api + 'users/:user_id/products/:id',
-                productName: api + 'products/search/:name'
+                productName: api + 'products/search/:name',
+                transactions: api + 'transactions'
             },
             defaultRange: 5
         });

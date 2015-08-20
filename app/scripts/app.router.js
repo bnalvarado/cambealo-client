@@ -27,6 +27,11 @@ angular.module('proyecto2App')
                 controller: 'PerfilCtrl',
                 authReq: true
             })
+            .when('/principal/transaction/:id', {
+                templateUrl: 'views/components/transactions/transaction.html',
+                controller: 'TransactionCtrl',
+                authReq: true
+            })
             .when('/principal/usuario/editar/:id', {
                 templateUrl: 'views/components/userAdministration/formUser.html',
                 controller: 'CrudUserCtrl',

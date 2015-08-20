@@ -22,6 +22,7 @@ angular.module('proyecto2App')
 		 */
 		var user = session.getCurrentUser();
 		$scope.productSearch = '';
+		$scope.products = [];
 		getProducts();
 
 		function getProducts() {
@@ -30,22 +31,35 @@ angular.module('proyecto2App')
 				if (data === null) {
 					return;
 				}
-				$scope.products = data.products;
+				showProducts(data.products);
 			}, function(err) {
 				alert('Fallo');
 			});
 		}
 
-		$scope.searchProduct = function(){
+		$scope.searchProduct = function() {
 			var resource = productsResource.search();
-			resource.get({name:$scope.productSearch},function(data){
+			resource.get({
+				name: $scope.productSearch
+			}, function(data) {
 				if (data === null) {
 					return;
 				}
-				$scope.products = data.product;
+				showProducts(data.product);
 			}, function(err) {
 				alert('Fallo');
 			});
 		};
+
+		function showProducts(data) {
+			data.map(function(value) {
+				if (session.isLoggedIn()) {
+					if (value.user_id === session.getCurrentUser().id) {
+						return;
+					}
+				}
+				$scope.products.push(value);
+			});
+		}
 	}
 ]);
